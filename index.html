@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PokemonTRPG</title>
+        <script src="https://unpkg.com/axios@1.6.3/dist/axios.min.js"></script>
+        <script src="https://unpkg.com/jquery@3.7.1/dist/jquery.min.js"></script>
+        <script src="https://unpkg.com/chosen-js@1.8.7/chosen.jquery.min.js"></script>
+        <link rel="stylesheet" href="https://unpkg.com/chosen-js@1.8.7/chosen.min.css">
+        <script src="js/Mein.js"></script>
+        <link rel="stylesheet" href="css/DisplayType.css">
+    </head>
+    <body>
+        <div class="for-pc">
+            パソコンの時に表示する内容
+            <div>
+                <select data-placeholder="選択して下さい" class="chosen" style="width:200px;">
+                    <option value="bulbasaur">フシギダネ</option>
+                    <option value="ivysaur">フシギソウ</option>
+                    <option value="venusaur">フシギバナ</option>
+                </select>
+            </div>
+        </div>
+        <div class="for-sp">
+            スマホの時に表示する内容
+        </div>
+        
+        <script>
+            $(function() {  
+                $(".chosen").chosen({
+                    search_contains: true,
+                    no_results_text:"ありませんでした : "
+                })
+            });  
+        </script>
+    </body>
+</html>
