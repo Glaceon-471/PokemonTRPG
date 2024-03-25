@@ -4,35 +4,961 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>PokemonTRPG</title>
-        <script src="https://unpkg.com/axios@1.6.3/dist/axios.min.js"></script>
         <script src="https://unpkg.com/jquery@3.7.1/dist/jquery.min.js"></script>
         <script src="https://unpkg.com/chosen-js@1.8.7/chosen.jquery.min.js"></script>
         <link rel="stylesheet" href="https://unpkg.com/chosen-js@1.8.7/chosen.min.css">
-        <script src="js/Mein.js"></script>
-        <link rel="stylesheet" href="css/DisplayType.css">
+        
+        <!-- 独自ライブラリ -->
+        <script src="js/Helper.js"></script>
+        <script src="js/Methods.js"></script>
+        <link rel="stylesheet" href="css/Main.css">
+        <!-- <link rel="stylesheet" href="css/DisplayType.css"> -->
+        <link rel="stylesheet" href="css/FlexFlow.css">
+        <link rel="stylesheet" href="css/TextField.css">
+        <link rel="stylesheet" href="css/TableField.css">
+        <link rel="stylesheet" href="css/AbilityTableField.css">
+        <link rel="stylesheet" href="css/TextType.css">
+        <link rel="stylesheet" href="css/Button.css">
     </head>
     <body>
         <div class="for-pc">
-            パソコンの時に表示する内容
-            <div>
-                <select data-placeholder="選択して下さい" class="chosen" style="width:200px;">
-                    <option value="bulbasaur">フシギダネ</option>
-                    <option value="ivysaur">フシギソウ</option>
-                    <option value="venusaur">フシギバナ</option>
-                </select>
+            <div style="display: flex; margin-bottom: 0.5rem;">
+                <div class="column">
+                    <img src="" alt="" width="475" height="475" id="PokemonImage">
+                    <select data-placeholder="選択して下さい" class="chosen" id="SelectPokemon"></select>
+                </div>
+                <div style="width: 600px;">
+                    <div class="field" style="margin-bottom: 0.5rem;">
+                        <div class="paragraph">
+                            <div class="data">
+                                <div class="title">名前</div>
+                                <div class="text"><input type="text" id="Name"></div>
+                            </div>
+                            <div class="data">
+                                <div class="title">ふりがな</div>
+                                <div class="text"><input type="text" id="Furigana"></div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="data">
+                                <div class="title">年齢</div>
+                                <div class="text"><input type="text" id="Age"></div>
+                            </div>
+                            <div class="data">
+                                <div class="title">性別</div>
+                                <div class="text"><input type="text" id="Gender"></div>
+                            </div>
+                            <div class="data">
+                                <div class="title">出身</div>
+                                <div class="text"><input type="text" id="From"></div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="data">
+                                <div class="title">高さ</div>
+                                <div class="text"><input type="text" id="Height"></div>
+                            </div>
+                            <div class="data">
+                                <div class="title">重さ</div>
+                                <div class="text"><input type="text" id="Weight"></div>
+                            </div>
+                            <div class="data">
+                                <div class="title">特性</div>
+                                <div class="text"><input type="text" id="Ability"></div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="data">
+                                <div class="title">タイプ1</div>
+                                <div class="text"><input type="text" id="Type1"></div>
+                            </div>
+                            <div class="data">
+                                <div class="title">タイプ2</div>
+                                <div class="text"><input type="text" id="Type2"></div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="data">
+                                <div class="title">テラスタイプ</div>
+                                <div class="text"><input type="text" id="TeraType"></div>
+                            </div>
+                            <div class="data">
+                                <div class="title">タイプ3</div>
+                                <div class="text"><input type="text" id="Type3"></div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="data">
+                                <div class="title">所属</div>
+                                <div class="text"><input type="text" id="Affiliation"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="table" style="margin-bottom: 0.5rem; border: 1px solid rgb(39, 43, 48);">
+                        <div class="paragraph">
+                            <div class="leftheader"></div>
+                            <div class="header">体力</div>
+                            <div class="header">攻撃</div>
+                            <div class="header">防御</div>
+                            <div class="header">特攻</div>
+                            <div class="header">特防</div>
+                            <div class="header">すばやさ</div>
+                            <div class="header">幸運</div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="leftheader">種族値</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="BaseStatsH" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="BaseStatsA" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="BaseStatsB" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="BaseStatsC" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="BaseStatsD" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="BaseStatsS" min="0">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="BaseStatsF" min="0" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="leftheader">個体値</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="IndividualValueH" min="0" max="31">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="IndividualValueA" min="0" max="31">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="IndividualValueB" min="0" max="31">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="IndividualValueC" min="0" max="31">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="IndividualValueD" min="0" max="31">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="IndividualValueS" min="0" max="31">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="IndividualValueF" min="0" max="31" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="leftheader">補正値</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="CorrectionValueH">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="CorrectionValueA">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="CorrectionValueB">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="CorrectionValueC">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="CorrectionValueD">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="CorrectionValueS">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="CorrectionValueF">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph">
+                            <div class="leftheader">実数値</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="ActualValueH" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="ActualValueA" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="ActualValueB" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="ActualValueC" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="ActualValueD" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="ActualValueS" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <input type="number" id="ActualValueF" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: flex-end;">
+                        <div class="button">
+                            <div class="pos">
+                                <span id="DownloadButton">jsonファイルをダウンロード</span>
+                            </div>
+                        </div>
+                        <div class="button" style="margin-left: 1rem;">
+                            <div class="pos">
+                                <span id="IndividualValueRandom">個体値ランダム</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="display: flex;">
+                <div style="width: 1075px;">
+                    <div class="abilitytable">
+                        <div class="paragraph fineparagraph">
+                            <div class="leftheader"></div>
+                            <div class="leftheader">2</div>
+                            <div class="leftheader">3</div>
+                            <div class="leftheader">4</div>
+                            <div class="leftheader">5</div>
+                            <div class="leftheader">6</div>
+                            <div class="leftheader">7</div>
+                            <div class="leftheader">8</div>
+                            <div class="leftheader">9</div>
+                            <div class="leftheader">10</div>
+                            <div class="leftheader">11</div>
+                            <div class="leftheader">12</div>
+                        </div>
+                        <div class="paragraph fineparagraph">
+                            <div class="header">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>A</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                        </div>
+                        <div class="paragraph" id="HiddenMove">
+                            <div class="header">秘伝技</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>いあいぎり</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>そらをとぶ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>なみのり</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>かいりき</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>フラッシュ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>きりばらい</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>うずしお</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>いわくだき</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>たきのぼり</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>ダイビング</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>ロッククライム</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph fineparagraph">
+                            <div class="header">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>B</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                        </div>
+                        <div class="paragraph" id="Technology">
+                            <div class="header">技術</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>罠</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>追跡</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>隠密</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>暗号</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>ライド</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>電子機械</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>薬品</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>盗聴</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>心理分析</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>早業</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>力業</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph fineparagraph">
+                            <div class="header">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>C</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                        </div>
+                        <div class="paragraph" id="Knowledge">
+                            <div class="header">知識</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>数学</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>科学</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>化学</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>医学</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>生物学</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>天文学</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>考古学</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>物語</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>呪術</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>占い</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>花</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph fineparagraph">
+                            <div class="header">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>D</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                        </div>
+                        <div class="paragraph" id="Perception">
+                            <div class="header">知覚</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>味</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>におい</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>物音</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>温度</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>記憶</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>第六感</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>芸術</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>情景</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>夢</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>霊魂</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>光</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph fineparagraph">
+                            <div class="header">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>E</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                        </div>
+                        <div class="paragraph" id="Emotion">
+                            <div class="header">情緒</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>愛</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>恋</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>悦び</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>笑い</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>恥じらい</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>憂い</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>恨み</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>怒り</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>驚き</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>悲しみ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>我慢</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="paragraph fineparagraph">
+                            <div class="header">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>F</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                            <div class="data"></div>
+                        </div>
+                        <div class="paragraph" id="History">
+                            <div class="header">歴史</div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>束縛と自由</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>絶望と幸福</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>海と大陸</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>時と空間と混沌</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>真実と理想</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>創造と破壊</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>光と闇</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>矛と盾</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>一撃と連撃</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>氷とゴーストの馬</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="data">
+                                <div class="size">
+                                    <div class="pos">
+                                        <span>過去と未来</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+        
+        <!--
         <div class="for-sp">
             スマホの時に表示する内容
+            <div>
+                <select data-placeholder="選択して下さい" class="chosen" id="SelectPokemon-ForSp" style="width:200px;"></select>
+            </div>
         </div>
+        -->
         
-        <script>
-            $(function() {  
-                $(".chosen").chosen({
-                    search_contains: true,
-                    no_results_text:"ありませんでした : "
-                })
-            });  
-        </script>
+        <script src="js/Mein.js"></script>
     </body>
 </html>

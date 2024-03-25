@@ -1,0 +1,97 @@
+.abilitytable {
+    display: flex;
+    flex-flow: row;
+    flex-direction: row;
+    justify-content: space-between;
+    border-collapse: collapse;
+}
+
+.abilitytable > .paragraph {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: column;
+    background-color: rgb(170, 180, 200);
+    width: initial;
+}
+
+.abilitytable > .paragraph.selected {
+    background-color: rgb(143, 163, 204);
+}
+
+.abilitytable > .paragraph.fineparagraph {
+    flex: none;
+    width: 2rem;
+}
+
+.abilitytable > .paragraph > .leftheader {
+    display: flex;
+    border: 1px solid rgb(89, 92, 96);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    height: 2rem;
+}
+
+.abilitytable > .paragraph > .header {
+    display: flex;
+    border: 1px solid rgb(89, 92, 96);
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    height: 2rem;
+}
+
+.abilitytable > .paragraph > .header > .size {
+    display: flex;
+    border-radius: 4px;
+    background-color: rgb(170, 180, 200);
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    min-width: 0px;
+}
+
+.abilitytable > .paragraph > .header.selected > .size {
+    background-color: rgb(143, 163, 204);
+}
+
+.abilitytable > .paragraph > .header > .size > .pos {
+    padding: calc(-1px + 0.175rem);
+}
+
+.abilitytable > .paragraph > .header > .size > .pos > span {
+    padding-left: 0px;
+    white-space: nowrap;
+}
+
+.abilitytable > .paragraph > .data {
+    display: flex;
+    flex: 1;
+    border: 1px solid rgb(89, 92, 96);
+    padding: calc(6px / 5);
+}
+
+.abilitytable > .paragraph > .data > .size {
+    display: flex;
+    border-radius: 4px;
+    background-color: rgb(210, 225, 255);
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    min-width: 0px;
+}
+
+.abilitytable > .paragraph > .data.selected > .size {
+    background-color: rgb(143, 163, 204);
+}
+
+.abilitytable > .paragraph > .data > .size > .pos {
+    padding: calc(-1px + 0.175rem) 1em;
+}
+
+.abilitytable > .paragraph > .data > .size > .pos > span {
+    padding-left: 0px;
+    white-space: nowrap;
+}
