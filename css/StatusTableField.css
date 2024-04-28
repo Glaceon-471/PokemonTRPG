@@ -1,11 +1,11 @@
-.table {
+.statustable {
     display: flex;
     flex-flow: column;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.table > .paragraph {
+.statustable > .paragraph {
     display: flex;
     flex: 1 1 0%;
     flex-direction: row;
@@ -13,7 +13,7 @@
     width: initial;
 }
 
-.table > .paragraph > .leftheader {
+.statustable > .paragraph > .leftheader {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,7 +23,7 @@
     width: 5rem;
 }
 
-.table > .paragraph > .header {
+.statustable > .paragraph > .header {
     display: flex;
     flex: 1;
     align-items: center;
@@ -33,14 +33,14 @@
     width: 0;
 }
 
-.table > .paragraph > .data {
+.statustable > .paragraph > .data {
     display: flex;
     flex: 1;
     padding: calc(6px / 5);
     width: 0;
 }
 
-.table > .paragraph > .data > .size {
+.statustable > .paragraph > .data > .size {
     display: flex;
     justify-content: center;
     height: 100%;
@@ -48,14 +48,14 @@
     min-width: 0px;
 }
 
-.table > .paragraph > .data > .size > .pos {
+.statustable > .paragraph > .data > .size > .pos {
     display: flex;
     flex: 1 1 auto;
     position: relative;
     min-width: 0px;
 }
 
-.table > .paragraph > .data > .size > .pos > input {
+.statustable > .paragraph > .data > .size > .pos > input {
     flex: 1 1 auto;
     padding: 0px;
     border-radius: 4px;
@@ -67,6 +67,6 @@
     min-width: 0px;
 }
 
-.table > .paragraph > .data > .size > .pos > input:disabled {
+.statustable > .paragraph > .data > .size > .pos > input:disabled {
     background-color: rgb(171, 202, 230);
 }

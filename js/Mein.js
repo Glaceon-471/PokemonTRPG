@@ -56,7 +56,8 @@ $(document).ready(() => {
     
     $("#DownloadButton").click(() => {
         let a = document.createElement("a");
-        a.download = `${InputValue("Name")}.json`
+        let name = InputValue("Name")
+        a.download = `${name != "" ? name : "data"}.json`
         $(a).click((e) => {
             e.target.href = URL.createObjectURL(new Blob([Export()], {
                 type: "text/plain"
@@ -65,18 +66,14 @@ $(document).ready(() => {
         a.click()
     })
     
-    let data = []
-    data.push(document.querySelectorAll("#HiddenMove > .data"))
-    data.push(document.querySelectorAll("#Technology > .data"))
-    data.push(document.querySelectorAll("#Knowledge > .data"))
-    data.push(document.querySelectorAll("#Perception > .data"))
-    data.push(document.querySelectorAll("#Emotion > .data"))
-    data.push(document.querySelectorAll("#History > .data"))
-    for (let elements of data) {
-        for (let e of elements) {
-            const element = e
+    for (let [i, elements] of GetSkillElementList().entries()) {
+        for (let [j, element] of elements.entries()) {
             $(element).click(() => {
-                $(element).toggleClass("selected")
+                if (!InputBoolValue("SkillCheckMode")) {
+                    $(element).toggleClass("selected")
+                    UpdateSkillList()
+                }
+                else SkillCheck(`${SkillGapTexts[i]}${j + 2}`)
             })
         }
     }
@@ -91,4 +88,7 @@ $(document).ready(() => {
             else $(element).removeClass("selected")
         })
     }
+    
+    AddMoveList(["たいあたり", "ノーマル", 40, null, 0, null])
+    AddMoveList(["なきごえ", "ノーマル", 0, "対象の攻撃ランク1ダウン", 0, null])
 })

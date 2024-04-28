@@ -1,0 +1,163 @@
+.movetable {
+    display: flex;
+    flex-flow: column;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movetable > .paragraph {
+    display: flex;
+    flex: 1 1 0%;
+    flex-direction: row;
+    background-color: rgb(170, 180, 200);
+    width: initial;
+}
+
+.movetable > .paragraph > .leftheader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(89, 92, 96);
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    min-height: 2rem;
+    width: 10rem;
+}
+
+.movetable > .paragraph > .header {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(89, 92, 96);
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    width: 0;
+}
+
+/* muvename */
+.movetable > .paragraph > .movename {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgb(89, 92, 96);
+    box-sizing: border-box;
+    padding: calc(6px / 5);
+    text-align: center;
+    min-height: 2rem;
+    width: 10rem;
+}
+
+.movetable > .paragraph > .movename > .size {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    min-width: 0px;
+}
+
+.movetable > .paragraph > .movename > .size > .pos {
+    display: flex;
+    flex: 1 1 auto;
+    position: relative;
+    min-width: 0px;
+}
+
+.movetable > .paragraph > .movename > .size > .pos > input {
+    flex: 1 1 auto;
+    padding: 0px;
+    border-radius: 4px;
+    border: 0px;
+    text-align: center;
+    background-color: rgb(210, 225, 255);
+    margin-right: 0px;
+    height: 100%;
+    min-width: 0px;
+}
+
+/* input */
+.movetable > .paragraph > .input {
+    display: flex;
+    flex: 1;
+    border: 1px solid rgb(89, 92, 96);
+    box-sizing: border-box;
+    padding: calc(6px / 5);
+    width: 0;
+}
+
+.movetable > .paragraph > .input.fine {
+    flex: none;
+    width: 4rem;
+}
+
+.movetable > .paragraph > .input > .size {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    min-width: 0px;
+}
+
+.movetable > .paragraph > .input > .size > .pos {
+    display: flex;
+    flex: 1 1 auto;
+    position: relative;
+    min-width: 0px;
+}
+
+.movetable > .paragraph > .input > .size > .pos > input {
+    flex: 1 1 auto;
+    padding: 0px;
+    border-radius: 4px;
+    border: 0px;
+    text-align: center;
+    background-color: rgb(210, 225, 255);
+    margin-right: 0px;
+    height: 100%;
+    min-width: 0px;
+}
+
+/* spna */
+.movetable > .paragraph > .span {
+    display: flex;
+    flex: 1;
+    border: 1px solid rgb(89, 92, 96);
+    box-sizing: border-box;
+    padding: calc(6px / 5);
+}
+
+.movetable > .paragraph > .span > .size {
+    display: flex;
+    border-radius: 4px;
+    background-color: rgb(210, 225, 255);
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    min-width: 0px;
+}
+
+.movetable > .paragraph > .span > .size > .pos {
+    padding: calc(-1px + 0.175rem) 1em;
+}
+
+.movetable > .paragraph > .span > .size > .pos > span {
+    padding-left: 0px;
+}
+
+/* width */
+.movetable > .paragraph > .type {
+    flex: none;
+    width: 6rem;
+}
+
+.movetable > .paragraph > .number {
+    flex: none;
+    width: 4rem;
+}
+
+.movetable > .paragraph > .skill {
+    flex: none;
+    width: 10rem;
+}
