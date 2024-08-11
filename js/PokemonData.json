@@ -39322,7 +39322,9 @@
             "Dipplin",
             "\u30ab\u30df\u30c3\u30c1\u30e5"
         ],
-        "genera": [],
+        "genera": [
+            "Candy Apple Pok\u00e9mon"
+        ],
         "types": [
             [
                 "Grass",
@@ -39360,7 +39362,9 @@
             "Poltchageist",
             "\u30c1\u30e3\u30c7\u30b9"
         ],
-        "genera": [],
+        "genera": [
+            "Matcha Pok\u00e9mon"
+        ],
         "types": [
             [
                 "Grass",
@@ -39398,7 +39402,9 @@
             "Sinistcha",
             "\u30e4\u30d0\u30bd\u30c1\u30e3"
         ],
-        "genera": [],
+        "genera": [
+            "Matcha Pok\u00e9mon"
+        ],
         "types": [
             [
                 "Grass",
@@ -39421,7 +39427,7 @@
         "weight": "2.2",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1013.png",
                 "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1013.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1013.png",
@@ -39436,7 +39442,9 @@
             "Okidogi",
             "\u30a4\u30a4\u30cd\u30a4\u30cc"
         ],
-        "genera": [],
+        "genera": [
+            "Retainer Pok\u00e9mon"
+        ],
         "types": [
             [
                 "Poison",
@@ -39474,7 +39482,9 @@
             "Munkidori",
             "\u30de\u30b7\u30de\u30b7\u30e9"
         ],
-        "genera": [],
+        "genera": [
+            "Retainer Pok\u00e9mon"
+        ],
         "types": [
             [
                 "Poison",
@@ -39512,7 +39522,9 @@
             "Fezandipiti",
             "\u30ad\u30c1\u30ad\u30ae\u30b9"
         ],
-        "genera": [],
+        "genera": [
+            "Retainer Pok\u00e9mon"
+        ],
         "types": [
             [
                 "Poison",
@@ -39550,7 +39562,9 @@
             "Ogerpon",
             "\u30aa\u30fc\u30ac\u30dd\u30f3"
         ],
-        "genera": [],
+        "genera": [
+            "Mask Pok\u00e9mon"
+        ],
         "types": [
             [
                 "Grass",
@@ -39570,7 +39584,7 @@
         "sprite": {
             "official-artwork": {
                 "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1017.png",
-                "front_shiny": null
+                "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1017.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1017.png",
             "front_female": null,
@@ -39610,7 +39624,7 @@
         "weight": "60.0",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1018.png",
                 "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1018.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1018.png",
@@ -39651,8 +39665,8 @@
         "weight": "93.0",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
-                "front_shiny": null
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1019.png",
+                "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1019.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1019.png",
             "front_female": null,
@@ -39667,7 +39681,7 @@
             "\u30a6\u30ac\u30c4\u30db\u30e0\u30e9"
         ],
         "genera": [
-            "Paladox Pok\u00e9mon",
+            "Paradox Pok\u00e9mon",
             "\u30d1\u30e9\u30c9\u30c3\u30af\u30b9\u30dd\u30b1\u30e2\u30f3"
         ],
         "types": [
@@ -39692,8 +39706,8 @@
         "weight": "590.0",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
-                "front_shiny": null
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1020.png",
+                "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1020.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1020.png",
             "front_female": null,
@@ -39708,7 +39722,7 @@
             "\u30bf\u30b1\u30eb\u30e9\u30a4\u30b3"
         ],
         "genera": [
-            "Paladox Pok\u00e9mon",
+            "Paradox Pok\u00e9mon",
             "\u30d1\u30e9\u30c9\u30c3\u30af\u30b9\u30dd\u30b1\u30e2\u30f3"
         ],
         "types": [
@@ -39733,7 +39747,7 @@
         "weight": "480.0",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1021.png",
                 "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1021.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1021.png",
@@ -39749,7 +39763,7 @@
             "\u30c6\u30c4\u30ce\u30a4\u30ef\u30aa"
         ],
         "genera": [
-            "Paladox Pok\u00e9mon",
+            "Paradox Pok\u00e9mon",
             "\u30d1\u30e9\u30c9\u30c3\u30af\u30b9\u30dd\u30b1\u30e2\u30f3"
         ],
         "types": [
@@ -39774,8 +39788,8 @@
         "weight": "162.5",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
-                "front_shiny": null
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1022.png",
+                "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1022.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1022.png",
             "front_female": null,
@@ -39790,7 +39804,7 @@
             "\u30c6\u30c4\u30ce\u30ab\u30b7\u30e9"
         ],
         "genera": [
-            "Paladox Pok\u00e9mon",
+            "Paradox Pok\u00e9mon",
             "\u30d1\u30e9\u30c9\u30c3\u30af\u30b9\u30dd\u30b1\u30e2\u30f3"
         ],
         "types": [
@@ -39815,7 +39829,7 @@
         "weight": "156.0",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1023.png",
                 "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1023.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1023.png",
@@ -39852,7 +39866,7 @@
         "weight": "6.5",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1024.png",
                 "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1024.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1024.png",
@@ -39893,12 +39907,12 @@
         "weight": "0.3",
         "sprite": {
             "official-artwork": {
-                "front_default": null,
-                "front_shiny": null
+                "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1025.png",
+                "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/shiny/1025.png"
             },
             "front_default": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1025.png",
             "front_female": null,
-            "front_shiny": null,
+            "front_shiny": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/1025.png",
             "front_shiny_female": null
         }
     }
